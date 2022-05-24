@@ -10,7 +10,7 @@ rm -rf exp/chain/lgraph
 rm -rf exp/chain/graph
 
 utils/utt2spk_to_spk2utt.pl data/train/utt2spk > data/train/spk2utt
-steps/make_mfcc.sh --nj 20 --cmd "$train_cmd" data/train exp/make_mfcc/train $mfccdir
+steps/make_mfcc.sh --nj 2000 --cmd run.pl data/train exp/make_mfcc/train $mfccdir
 steps/compute_cmvn_stats.sh data/train exp/make_mfcc/train $mfccdir
 utils/validate_data_dir.sh data/train
 utils/fix_data_dir.sh data/train
