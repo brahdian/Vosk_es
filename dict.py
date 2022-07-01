@@ -4,7 +4,7 @@ import phonetisaurus
 
 words = {}
 
-for line in open("db/fr.dic"):
+for line in open("db/es.dic"):
     items = line.split()
     if items[0] not in words:
          words[items[0]] = []
@@ -22,7 +22,7 @@ for line in open("db/extra.txt"):
         if w not in words:
              new_words.add(w)
 
-for w, phones in phonetisaurus.predict(new_words, "db/g2p/fr.fst"):
+for w, phones in phonetisaurus.predict(new_words, "db/g2p/es.fst"):
     words[w] = []
     words[w].append(" ".join(phones))
 
