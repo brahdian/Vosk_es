@@ -20,7 +20,7 @@ def getQuakeData():
         filename = readline[readline.index("common_"):len(readline)]
         speakerid =readline[0:readline.index("_common_")]
         filelength = get_length("db/cv/"+filename+".mp3")
-        newline = readline+"\t"+speakerid+"\t"+"0.00"+"\t"+str(filelength)
+        newline = readline+"  "+speakerid+"  "+"0.00"+"  "+str(filelength)
         witefile.write(newline+'\n')
     witefile.close()
 
